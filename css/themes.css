@@ -138,4 +138,15 @@
   .page[data-theme="dark"] .hero__description {
     display: none;
   }
-}
+  
+  }
+  [data-theme="dark"] .button--secondary {
+    background: #ff2b2b;
+    color: #fff;
+    border-color: #ff2b2b;
+  }
+  
+  [data-theme="dark"] .button--secondary:hover {
+    background: #ff4a4a;
+    border-color: #ff4a4a;
+  }
