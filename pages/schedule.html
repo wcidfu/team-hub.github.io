@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Derivative — расписание скримов команды." />
+  <title>Расписание</title>
+    <link rel="icon" href="/assets/images/mascot-transparent.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/themes.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body class="page page--inner" data-theme="light">
+  <header class="site-header" data-header>
+    <a class="site-header__brand" href="../index.html" aria-label="Derivative — главная">
+      <span class="site-header__logo">Derivative</span>
+      <span class="site-header__caption">Team Hub</span>
+    </a>
+
+    <nav class="site-header__nav" aria-label="Главная навигация">
+      <a class="site-header__link" href="./schedule.html" aria-current="page">Расписание</a>
+    </nav>
+  </header>
+
+  <main class="inner-page">
+    <div class="inner-page__wrap inner-page__wrap--wide">
+      <a class="inner-page__back" href="../index.html">← На главную</a>
+
+      <section class="schedule-hero" aria-labelledby="schedule-title">
+        <p class="schedule-hero__eyebrow">Scrim booking</p>
+        <h1 class="inner-page__title" id="schedule-title">Расписание</h1>
+      </section>
+
+      <section class="scrim-panel" aria-label="Слоты для скримов">
+        <div class="scrim-panel__top">
+          <div class="scrim-stats" aria-label="Статистика слотов">
+            <span><b id="availableCount">0</b> свободно</span>
+            <span><b id="bookedCount">0</b> занято</span>
+          </div>
+
+          <div class="scrim-actions">
+            <button class="scrim-filter is-active" type="button" data-filter="all">Все</button>
+            <button class="scrim-filter" type="button" data-filter="available">Свободные</button>
+            <button class="scrim-filter" type="button" data-filter="booked">Занятые</button>
+            <button class="scrim-refresh" type="button" id="refreshSlots">Обновить</button>
+          </div>
+        </div>
+
+        <p class="scrim-status" id="scrimStatus">Думает, подождите...</p>
+        <div class="scrim-slots" id="scrimSlots"></div>
+      </section>
+    </div>
+  </main>
+
+  <div class="booking-modal is-hidden" id="bookingModal" aria-hidden="true">
+    <div class="booking-modal__card" role="dialog" aria-modal="true" aria-labelledby="bookingTitle">
+      <button class="booking-modal__close" type="button" id="closeBooking" aria-label="Закрыть">×</button>
+
+      <h2 class="booking-modal__title" id="bookingTitle">Забронировать скрим</h2>
+      <p class="booking-modal__slot" id="bookingSlotText"></p>
+
+      <form class="booking-form" id="bookingForm">
+        <input type="hidden" id="slotId" />
+
+        <label class="booking-form__label">
+          Название команды
+          <input class="booking-form__field" id="teamName" type="text" required maxlength="50" placeholder="Название вашей команды" />
+        </label>
+
+        <label class="booking-form__label">
+          Discord nick
+          <input class="booking-form__field" id="contact" type="text" required maxlength="80" placeholder="discord" />
+        </label>
+
+        <label class="booking-form__label">
+          Комментарий
+          <textarea class="booking-form__field booking-form__field--textarea" id="comment" maxlength="250" placeholder="Мульти-ссылку на команду, конкретное время и кол-во игр"></textarea>
+        </label>
+
+        <button class="booking-form__submit" type="submit">Забронировать</button>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="../js/main.js"></script>
+  <script src="../js/scrim-booking.js"></script>
+</body>
+</html>

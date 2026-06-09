@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Derivative — Team Hub" />
+  <title>Derivative — Team Hub</title>
+  <link rel="icon" href="/assets/images/mascot-transparent.png" type="image/x-icon">
+
+  <link
+    rel="preload"
+    href="./assets/images/mascot-transparent.png"
+    as="image"
+    fetchpriority="high"
+  />
+
+  <link rel="stylesheet" href="./css/base.css" />
+  <link rel="stylesheet" href="./css/layout.css" />
+  <link rel="stylesheet" href="./css/components.css" />
+  <link rel="stylesheet" href="./css/themes.css" />
+</head>
+
+<body class="page" data-theme="light">
+  <header class="site-header" data-header>
+    <a class="site-header__brand" href="./index.html" aria-label="Derivative — главная">
+      <span class="site-header__logo">Derivative</span>
+      <span class="site-header__caption">Team Hub</span>
+    </a>
+
+    <nav class="site-header__nav" aria-label="Главная навигация">
+      <a class="site-header__link" href="./pages/schedule.html">Расписание</a>
+    </nav>
+  </header>
+
+  <main class="site-shell">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__content">
+        <p class="hero__kicker">League of Legends</p>
+        <h1 class="hero__title" id="hero-title">Derivative</h1>
+
+        <div class="hero__mascot mascot" data-mascot>
+          <img
+            class="mascot__image"
+            src="./assets/images/mascot-transparent.png"
+            width="1254"
+            height="1254"
+            alt="Маскот команды Derivative"
+            draggable="false"
+            decoding="async"
+            fetchpriority="high"
+          />
+
+          <button
+            class="mascot__eye-hitbox mascot__eye-hitbox--left"
+            type="button"
+            data-eye-reset
+            aria-label="shhhone"
+          ></button>
+
+          <button
+            class="mascot__eye-hitbox mascot__eye-hitbox--right"
+            type="button"
+            data-eye-unlock
+            aria-label="shhhtwo"
+          ></button>
+        </div>
+
+        <p class="hero__slogan" data-dark-only>
+          In the name of <span>DENYBLAG</span>
+        </p>
+
+        <p class="hero__description" data-dark-only>
+          xDDDDD
+        </p>
+
+        <nav class="hero__actions" aria-label="Разделы сайта">
+          <a class="button button--primary" href="./pages/schedule.html">Расписание</a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
